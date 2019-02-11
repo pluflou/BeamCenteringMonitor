@@ -8,6 +8,9 @@ import matplotlib as mt
 import datetime
 from negativecurrents import negativePlates
 
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
+
 ##import data ##
 data=pd.read_csv('data/BCManalysis', comment='#', sep='\t', names=["Time", "TL", "TL Neg Error", "TL Pos Error", "TR", "TR Neg Error", "TR Pos Error", "BL", "BL Neg Error", "BL Pos Error", "BR", "BR Neg Error", "BR Pos Error", "B1 Current", "Current Neg Error", "Current Pos Error"])
 data=data.dropna()
