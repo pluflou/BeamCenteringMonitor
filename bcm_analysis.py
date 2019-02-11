@@ -53,7 +53,7 @@ err_ratio_n= ratio*((errL[1]/sumL) + (errR[1]/sumR))
 
 
 ##Plotting results##
-fig = plt.figure()
+fig = plt.figure(figsize=(10,15))
 ax1 = fig.add_axes([0.1, 0.6, 0.8, 0.25], ylim=(-0.1, 1.2))
 ax2 = fig.add_axes([0.1, 0.35, 0.8, 0.25], ylim=(-0.5, 10))
 ax3 = fig.add_axes([0.1, 0.1, 0.8, 0.25])
@@ -80,6 +80,9 @@ ax3.plot_date(time, current, label="Dipole Current", color="blue", markersize=3)
 ax3.set_ylabel('B1 Current (A)')
 ax3.legend()
 
+t= pd.to_datetime(str(datetime.datetime.now())) 
+timestring = t.strftime('%Y-%m-%d_%H:%M:%S')
+plt.savefig('bcmcenter'+'_'+timestring+'.png')
 plt.show()
 ##################
 
