@@ -13,21 +13,28 @@ register_matplotlib_converters()
 
 ##import data ##
 data=pd.read_csv('data/BCManalysis', comment='#', sep='\t', names=["Time", "TL", "TL Neg Error", "TL Pos Error", "TR", "TR Neg Error", "TR Pos Error", "BL", "BL Neg Error", "BL Pos Error", "BR", "BR Neg Error", "BR Pos Error", "B1 Current", "Current Neg Error", "Current Pos Error"])
-data=data.dropna()
+#data=data.dropna()
+
 tl, tr, bl, br, current = np.array(data["TL"]),np.array(data["TR"]),np.array(data["BL"]),np.array(data["BR"]), np.array(data["B1 Current"])
 e1p, e1n, e2p,e2n,e3p,e3n,e4p,e4n= data["TL Pos Error"],data["TL Neg Error"],data["TR Pos Error"],data["TR Neg Error"],data["BL Pos Error"],data["BL Neg Error"],data["BR Pos Error"],data["BR Neg Error"],
 ################
 
 #Parsing CS-S timestamps for plotting (need to use plot_dates for this format)
-fmt = '%Y-%m-%d %H:%M:%S'
+#try:
+ #   fmt = '%Y-%m-%d %H:%M:%S'
+  #  time = mt.dates.date2num([datetime.datetime.strptime(row[:-10], fmt) for row in data["Time"]])
+#except ValueError:
+ #   print("Checking file format")
+fmt = '%Y/%m/%d %H:%M:%S'
 time = mt.dates.date2num([datetime.datetime.strptime(row[:-10], fmt) for row in data["Time"]])
 
 #tranpose of errors is needed to match data
+#print(np.array([e1p,e1n]).shape)
 err1= np.transpose(np.array([e1p,e1n]))
 err2=np.transpose( np.array([e2p, e2n]))
 err3= np.transpose(np.array([e3p, e3n]))
 err4= np.transpose(np.array([e4p, e4n]))
-
+#print(err1.shape)
 #Getting rid of negative currents plate by plate
 TL, TR, BL, BR, E1, E2, E3, E4= negativePlates(tl, tr, bl, br, err1, err2, err3, err4)
 
@@ -79,9 +86,9 @@ ax2.set_ylabel('Ratio L/R')
 ax2.legend()
 
 
-ax3.plot_date(time, current, label="Dipole Current", color="blue", markersize=3)
-ax3.set_ylabel('B1 Current (A)')
-ax3.legend()
+#ax3.plot_date(time, current, label="Dipole Current", color="blue", markersize=3)
+#ax3.set_ylabel('B1 Current (A)')
+#ax3.legend()
 
 t= pd.to_datetime(str(datetime.datetime.now())) 
 timestring = t.strftime('%Y-%m-%d_%H:%M:%S')

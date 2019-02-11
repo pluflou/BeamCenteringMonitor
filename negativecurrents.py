@@ -2,6 +2,7 @@
 
 def negativePlates( x1, x2, x3, x4, err1, err2, err3, err4):
     for i  in range(len(x1)):
+ 
         if ((len(x1) != len(x2)) or (len(x1) != len(x3)) or (len(x1) != len(x4)) ):
             print("Column lengths don't match. Check import.")
             
@@ -38,8 +39,8 @@ def negativePlates( x1, x2, x3, x4, err1, err2, err3, err4):
             x2[i]=1E-20 
             x3[i]=1E-20 
             
-            err1[i]= err1[i]+err2[i]/2 + err3/2
-            err4[i]= err4[i]+ err2[i]/2 + err3/2
+            err1[i]= err1[i]+err2[i]/2 + err3[i]/2
+            err4[i]= err4[i]+ err2[i]/2 + err3[i]/2
             
         elif (x1[i]>=0 and x2[i]>=0 and x3[i]<0 and x4[i]<0): # + + - - 
             x1[i]=x1[i]+abs(x3[i])
