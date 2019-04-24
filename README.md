@@ -2,6 +2,8 @@
 Packages needed:
 numpy, matplotlib, pandas, datetime
 
+
+![BCM Visual Example](examples/bcmcenter_2019-02-11_12:22:40.png)
 #Retreiving the data
 
 The method below gives us data that has been averaged of a specified time limit and the errors from the max and min during each time period have been calculated.
