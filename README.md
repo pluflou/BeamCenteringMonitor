@@ -8,7 +8,7 @@ The BCM is used in the SECAR beamline to center the beam. It's made up of four m
  
 Above image shows the diagnostic devices before installation in beamline. Leftmost device is the BCM.
 
- **Resulting visuals
+ **Resulting visuals**
  ![example](examples/bcmcenter_2019-02-11_12:22:40.png)
  
  The top graph in the above image shows the left sum and the right sum of the current as a function of time. 
