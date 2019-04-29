@@ -11,11 +11,11 @@ Above image shows the diagnostic devices before installation in beamline. Leftmo
  ## Resulting visuals
  ![example](examples/bcmcenter_2019-02-11_12:22:40.png)
  
- The top graph in the above image shows the left sum and the right sum of the current as a function of time. 
+ **TOP**: The left sum and the right sum of the current as a function of time. 
  
- The plot in the middle shows the ratio of left to right. The beam is centered in the horizontal direction when they ratio is 1 as indicated by the red line. This can be seen as the crossing on the top graph. 
+ **MIDDLE**: The ratio of left to right. The beam is centered in the horizontal direction when they ratio is 1 as indicated by the red line. This can be seen as the crossing on the top graph. 
  
- The bottom graph is the value of the dipole current moving the beam as a function of time. In this image, we can see that there is an *error in the recorded data*: the values of the dipole current do not change, while the ratio of left to right is changing, meaning the beam is moving but it *looks* like nothing is making it move. This was later found out to be that the dipole current values were not being archived to the desired precision, and since we were making changes as small as 0.01 A, this did not show in the data. 
+ **BOTTOM**: The value of the dipole current moving the beam as a function of time. In this image, we can see that there is an *error in the recorded data*: the values of the dipole current do not change, while the ratio of left to right is changing, meaning the beam is moving but it *looks* like nothing is making it move. This was later found out to be that the dipole current values were not being archived to the desired precision, and since we were making changes as small as 0.01 A, this did not show in the data. 
  
 # NOTE
 
@@ -34,7 +34,8 @@ The method below gives us data that has been averaged of a specified time limit 
 3. Select Tabular and check the errors option. Uncheck all else. Exponentials with precision 3 is fine.
 4. Select path to where this code is (if running on same machine), name 'BCManalysis' and click Export.
 
-**How to run**
+
+## How to run
 
 1. Unless the name of the data file is different, run the code immediately with 'python3 bcm_analysis.py'
 2. Any changes in the CSS plot will likely cause an error while importing or cause to give you wrong information.
