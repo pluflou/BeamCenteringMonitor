@@ -1,16 +1,15 @@
 **Beam Centering Monitor (BCM) data analysis for SECAR**
 
-*The BCM is used in the SECAR beamline to center the beam. It's made up of four metal plates that are electrically isolated and idependently read current when a beam of particles hits them. The amount of current read is proportional to the amount of beam hitting the plate, and the sum of all four currents is the total amount of beam we are producing.*
+The BCM is used in the SECAR beamline to center the beam. It's made up of four metal plates that are electrically isolated and idependently read current when a beam of particles hits them. The amount of current read is proportional to the amount of beam hitting the plate, and the sum of all four currents is the total amount of beam we are producing.
 
- > <img src="images/3in1_image.jpg" width="450" height="300">
+*This is the analysis code used to visualize the data incoming from Control System Studio (CSS) to aid with centering the beam.*
+
+<img src="images/3in1_image.jpg" width="450" height="300">
  
- > Above image shows the diagnostic devices before installation in beamline. Leftmost device is the BCM.
+Above image shows the diagnostic devices before installation in beamline. Leftmost device is the BCM.
 
-This is the analysis code used to visualize the data incoming from Control System Studio (CSS) to aid with centering the beam.
-
- **Resulting visuals**
- 
- <img src="examples/bcmcenter_2019-02-11_12:22:40.png" width="650" height="1000">
+ **Resulting visuals
+ ![example](examples/bcmcenter_2019-02-11_12:22:40.png)
  
  The top graph in the above image shows the left sum and the right sum of the current as a function of time. 
  
